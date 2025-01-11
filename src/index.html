@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roam Nepal</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-primary text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 px-14">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">Roam Nepal</div>
+
+            <div class="flex flex-col items-end">
+                <!-- Top Navigation Items -->
+                <div class="hidden md:flex items-center space-x-4 gap-4 text-sm">
+                    <span class="flex items-center space-x-1">
+                        <span class="text-sm">● NPR</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <span class="text-sm">📅 B.S</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <span class="text-sm">🇺🇸 English</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <span class="text-sm">❓ Help</span>
+                    </span>
+                    <button class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🎟️</span>
+                        <span>Manage Tickets</span>
+                    </button>
+                    <div class="flex items-center space-x-1">
+                        <img src="images/sample_1.jpg" alt="Profile" class="w-8 h-8 rounded-full border">
+                        <span>Harris's Account</span>
+                    </div>
+                </div>
+
+                <!-- Bottom Navigation Items -->
+                <div class="hidden md:flex items-center space-x-6 text-xl mt-5">
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🚌</span>
+                        <span>Bus Ticket</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🏍️</span>
+                        <span>Rental</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🏨</span>
+                        <span>Hotels</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🎯</span>
+                        <span>Activities</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🎁</span>
+                        <span>Packages</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>✈️</span>
+                        <span>Flights</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden flex items-center px-3 py-2 border rounded text-white border-white">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20">
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Landing Page Section -->
+    <section class="container mx-auto mt-6 px-6">
+        <div class="bg-white shadow-md rounded-md p-6 flex flex-col lg:flex-row items-start lg:items-center">
+            <!-- Form Section -->
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-2xl font-semibold mb-4">Affordable & reliable vehicle rentals</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label for="pickup" class="block font-medium">Pick-Up</label>
+                        <input type="text" id="pickup" class="w-full border rounded px-4 py-2">
+                    </div>
+                    <div>
+                        <label for="dropoff" class="block font-medium">Drop-Off</label>
+                        <input type="text" id="dropoff" class="w-full border rounded px-4 py-2">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="pickup-date" class="block font-medium">Pick-Up Date / Time</label>
+                            <input type="datetime-local" id="pickup-date" class="w-full border rounded px-4 py-2">
+                        </div>
+                        <div>
+                            <label for="dropoff-date" class="block font-medium">Drop-Off Date / Time</label>
+                            <input type="datetime-local" id="dropoff-date" class="w-full border rounded px-4 py-2">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="vehicle-type" class="block font-medium">Vehicle Type</label>
+                        <select id="vehicle-type" class="w-full border rounded px-4 py-2">
+                            <option>Select</option>
+                            <option>Sedan</option>
+                            <option>SUV</option>
+                            <option>Van</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="pax" class="block font-medium">Number of Pax</label>
+                        <input type="number" id="pax" class="w-full border rounded px-4 py-2">
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="include-driver" class="mr-2">
+                        <label for="include-driver">Include a driver</label>
+                    </div>
+                    <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded hover:bg-teal-700">
+                        Search Vehicles
+                    </button>
+                </form>
+            </div>
+            <!-- Map Section -->
+            <div class="hidden lg:block lg:w-1/2 lg:ml-6">
+                <img src="map-placeholder.png" alt="Map" class="w-full rounded-md">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
