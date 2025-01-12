@@ -8,12 +8,23 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="./output.css" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+        rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-roboto">
     <!-- Navigation Bar -->
-    <nav class="bg-primary text-white">
-        <div class="container mx-auto flex justify-between items-center py-4 px-14">
+    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg ">
+        <div class="mx-auto flex justify-between items-center py-4 px-16">
             <!-- Logo -->
             <div class="text-2xl font-bold">Roam Nepal</div>
 
@@ -48,7 +59,7 @@
                         <span>🚌</span>
                         <span>Bus Ticket</span>
                     </a>
-                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1 cus-active">
                         <span>🏍️</span>
                         <span>Rental</span>
                     </a>
@@ -81,59 +92,130 @@
         </div>
     </nav>
 
-    <!-- Landing Page Section -->
-    <section class="container mx-auto mt-6 px-6">
-        <div class="bg-white shadow-md rounded-md p-6 flex flex-col lg:flex-row items-start lg:items-center">
-            <!-- Form Section -->
-            <div class="w-full lg:w-1/2">
-                <h2 class="text-2xl font-semibold mb-4">Affordable & reliable vehicle rentals</h2>
-                <form class="space-y-4">
-                    <div>
-                        <label for="pickup" class="block font-medium">Pick-Up</label>
-                        <input type="text" id="pickup" class="w-full border rounded px-4 py-2">
-                    </div>
-                    <div>
-                        <label for="dropoff" class="block font-medium">Drop-Off</label>
-                        <input type="text" id="dropoff" class="w-full border rounded px-4 py-2">
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label for="pickup-date" class="block font-medium">Pick-Up Date / Time</label>
-                            <input type="datetime-local" id="pickup-date" class="w-full border rounded px-4 py-2">
-                        </div>
-                        <div>
-                            <label for="dropoff-date" class="block font-medium">Drop-Off Date / Time</label>
-                            <input type="datetime-local" id="dropoff-date" class="w-full border rounded px-4 py-2">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="vehicle-type" class="block font-medium">Vehicle Type</label>
-                        <select id="vehicle-type" class="w-full border rounded px-4 py-2">
-                            <option>Select</option>
-                            <option>Sedan</option>
-                            <option>SUV</option>
-                            <option>Van</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="pax" class="block font-medium">Number of Pax</label>
-                        <input type="number" id="pax" class="w-full border rounded px-4 py-2">
-                    </div>
-                    <div class="flex items-center">
-                        <input type="checkbox" id="include-driver" class="mr-2">
-                        <label for="include-driver">Include a driver</label>
-                    </div>
-                    <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded hover:bg-teal-700">
-                        Search Vehicles
+    <!-- Content Section with Background Image -->
+    <div class="relative flex items-center  bg-cover bg-center h-lvh"
+        style="background-image: url('/src/images/home1.jpg'); ">
+        <div class="bg-red-500">
+            <h1 class="absolute top-[150px] left-20 text-white text-3xl">Affordable and Reiable Vehicle Rentals</h1>
+            <div class="absolute top-[200px] left-20 z-40 bg-red-500">
+                <div class="bg-white flex">
+                    <button id="round-trip-tab"
+                        class="py-2 px-4 text-left hover:bg-gray-100 text-teal-600 font-semibold border-b-4 border-blue-900">
+                        Round Trip
                     </button>
-                </form>
+                    <button id="one-way-tab" class="py-2 px-4 text-left hover:bg-gray-100 text-gray-600">
+                        One Way
+                    </button>
+                    <button id="hourly-tab" class="py-2 px-4 text-left hover:bg-gray-100 text-gray-600">
+                        Hourly
+                    </button>
+                    <button id="airport-tab" class="py-2 px-4 text-left hover:bg-gray-100 text-gray-600">
+                        Airport Pick/Drop
+                    </button>
+                </div>
             </div>
-            <!-- Map Section -->
-            <div class="hidden lg:block lg:w-1/2 lg:ml-6">
-                <img src="map-placeholder.png" alt="Map" class="w-full rounded-md">
+            <div class="w-4/5 absolute top-[241px] left-20 right-4 flex bg-white rounded-lg shadow-lg overflow-hidden">
+                <div id="form-container" class="w-1/2 p-6">
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-12 gap-4 items-center">
+                            <div class="col-span-5">
+                                <label for="pickup" class="block text-sm font-medium">Pick-Up</label>
+                                <input type="text" id="pickup" class="w-full border rounded px-4 py-2"
+                                    placeholder="Pick-Up Location">
+                            </div>
+                            <div class="col-span-2 flex justify-center">
+                                <button
+                                    class="bg-teal-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                    ⇄
+                                </button>
+                            </div>
+                            <div class="col-span-5">
+                                <label for="dropoff" class="block text-sm font-medium">Drop-Off</label>
+                                <input type="text" id="dropoff" class="w-full border rounded px-4 py-2"
+                                    placeholder="Drop-Off Location">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="pickup-date" class="block text-sm font-medium">Pick-Up Date / Time</label>
+                                <input type="datetime-local" id="pickup-date" class="w-full border rounded px-4 py-2">
+                            </div>
+                            <div>
+                                <label for="dropoff-date" class="block text-sm font-medium">Drop-Off Date / Time</label>
+                                <input type="datetime-local" id="dropoff-date" class="w-full border rounded px-4 py-2">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="vehicle-type" class="block text-sm font-medium">Vehicle Type</label>
+                            <select id="vehicle-type" class="w-full border rounded px-4 py-2">
+                                <option value="">Select Vehicle Type</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="van">Van</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="pax" class="block text-sm font-medium">Number of Pax</label>
+                            <input type="number" id="pax" class="w-full border rounded px-4 py-2"
+                                placeholder="Enter number of passengers">
+                        </div>
+
+                        <div class="flex items-center">
+                            <input type="checkbox" id="include-driver" class="mr-2">
+                            <label for="include-driver" class="text-sm">Include a driver</label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded hover:bg-teal-700">
+                            Search Vehicles
+                        </button>
+                    </form>
+                </div>
+
+
+                <div id="map-container" class="w-1/2 bg-gray-200 flex items-center justify-center">
+                    <span class="text-gray-600">Map will be displayed here</span>
+                </div>
             </div>
         </div>
-    </section>
+
+    </div>
+
+    <script>
+        // Tab switching logic
+        const tabs = document.querySelectorAll('#round-trip-tab, #one-way-tab, #hourly-tab, #airport-tab');
+        const formContainer = document.getElementById('form-container');
+        const mapContainer = document.getElementById('map-container');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (event) => {
+                // Update tab styles
+                tabs.forEach(t => t.classList.remove('text-teal-600', 'font-semibold'));
+                event.target.classList.add('text-teal-600', 'font-semibold');
+
+                // Change content based on tab
+                if (event.target.id === 'round-trip-tab') {
+                    formContainer.innerHTML = `<p class="text-center">Form for Round Trip goes here.</p>`;
+                    mapContainer.innerHTML = `<span class="text-gray-600">Map for Round Trip will be displayed here.</span>`;
+                } else if (event.target.id === 'one-way-tab') {
+                    formContainer.innerHTML = `<p class="text-center">Form for One Way goes here.</p>`;
+                    mapContainer.innerHTML = `<span class="text-gray-600">Map for One Way will be displayed here.</span>`;
+                } else if (event.target.id === 'hourly-tab') {
+                    formContainer.innerHTML = `<p class="text-center">Form for Hourly goes here.</p>`;
+                    mapContainer.innerHTML = `<span class="text-gray-600">Map for Hourly will be displayed here.</span>`;
+                } else if (event.target.id === 'airport-tab') {
+                    formContainer.innerHTML = `<p class="text-center">Form for Airport Pick/Drop goes here.</p>`;
+                    mapContainer.innerHTML = `<span class="text-gray-600">Map for Airport Pick/Drop will be displayed here.</span>`;
+                }
+            });
+        });
+    </script>
+
+
+
+
 </body>
 
 </html>
