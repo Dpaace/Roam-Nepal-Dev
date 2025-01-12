@@ -93,3 +93,42 @@ document.addEventListener('click', (event) => {
     }
 });
 
+
+
+// to make the continue where you left card horizontally scrollable 
+function scrollHorizontally(event) {
+    const container = event.currentTarget;
+    event.preventDefault();
+    container.scrollLeft += event.deltaY;
+}
+
+const scrollableBanner = document.getElementById("scrollable-banner");
+
+let scrollInterval = setInterval(() => {
+    const scrollAmount = scrollableBanner.offsetWidth;
+    if (scrollableBanner.scrollLeft + scrollAmount >= scrollableBanner.scrollWidth) {
+        // Reset to the beginning when at the end
+        scrollableBanner.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+        // Scroll to the next section
+        scrollableBanner.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+}, 5000);
+
+// Pause auto-scroll on hover
+scrollableBanner.addEventListener("mouseover", () => clearInterval(scrollInterval));
+
+// Resume auto-scroll when not hovering
+scrollableBanner.addEventListener("mouseleave", () => {
+    scrollInterval = setInterval(() => {
+        const scrollAmount = scrollableBanner.offsetWidth;
+        if (scrollableBanner.scrollLeft + scrollAmount >= scrollableBanner.scrollWidth) {
+            scrollableBanner.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+            scrollableBanner.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+    }, 5000);
+});
+
+
+
