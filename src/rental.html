@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roam Nepal</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link href="./output.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body class="bg-white font-roboto">
+
+    <nav class="bg-[#03677E] text-white fixed top-0 left-0 w-full z-50 shadow-lg ">
+        <div class="mx-auto flex justify-between items-center py-4 px-16">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">Roam Nepal</div>
+
+            <div class="flex flex-col items-end">
+                <!-- Top Navigation Items -->
+                <div class="hidden md:flex items-center space-x-4 gap-4 text-sm">
+                    <span class="flex items-center space-x-1">
+                        <span class="text-sm">● NPR</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <span class="text-sm">📅 B.S</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <span class="text-sm">🇺🇸 English</span>
+                    </span>
+                    <span class="flex items-center space-x-1">
+                        <span class="text-sm">❓ Help</span>
+                    </span>
+                    <button class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🎟️</span>
+                        <span>Manage Tickets</span>
+                    </button>
+                    <div class="flex items-center space-x-1">
+                        <img src="images/sample_1.jpg" alt="Profile" class="w-8 h-8 rounded-full border">
+                        <span>Harris's Account</span>
+                    </div>
+                </div>
+
+                <!-- Bottom Navigation Items -->
+                <div class="hidden md:flex items-center space-x-6 text-xl mt-5">
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🚌</span>
+                        <span>Bus Ticket</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1 cus-active">
+                        <span>🏍️</span>
+                        <span>Rental</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🏨</span>
+                        <span>Hotels</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🎯</span>
+                        <span>Activities</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>🎁</span>
+                        <span>Packages</span>
+                    </a>
+                    <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
+                        <span>✈️</span>
+                        <span>Flights</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden flex items-center px-3 py-2 border rounded text-white border-white">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20">
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Top Date Selection Section -->
+    <!-- <div class="flex w-full top-[110px] mx-auto px-6 fixed border-b-2"> -->
+    <div class="flex w-full top-[110px] left-0 fixed px-6 bg-white border-b-2 z-40 shadow-sm">
+        <!-- Route and Timing -->
+        <div class="flex justify-between items-center mb-4">
+            <!-- Route Info -->
+            <div>
+                <h2 class="text-lg font-bold text-gray-800">Kathmandu - Pokhara</h2>
+                <p class="text-sm text-gray-600">5:00 am Mon, Jan 6 - 7:00 pm Tue, Jan 7</p>
+                <a href="#" class="text-blue-600 text-sm hover:underline">Change Details</a>
+            </div>
+            <!-- Date Selection -->
+            <div class="flex space-x-2 px-8 overflow-x-auto scrollbar-hide" onwheel="scrollHorizontally(event)">
+                <!-- Date Card 1 -->
+                <button
+                    class="w-[150px] flex flex-col items-center justify-center border px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 focus:ring-2 focus:ring-blue-600">
+                    <span class="text-sm font-semibold text-gray-800">Today, Jan 6</span>
+                    <span class="text-xs text-gray-500">Form Rs 3000</span>
+                </button>
+                <!-- Date Card 2 -->
+                <button
+                    class="flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:ring-2 focus:ring-blue-600">
+                    <span class="text-sm font-semibold text-gray-800">Tomorrow, Jan 7</span>
+                    <span class="text-xs text-gray-500">Form Rs 3000</span>
+                </button>
+                <!-- Date Card 3 -->
+                <button
+                    class="flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:ring-2 focus:ring-blue-600">
+                    <span class="text-sm font-semibold text-gray-800">Tue, Jan 6</span>
+                    <span class="text-xs text-gray-500">Form Rs 3000</span>
+                </button>
+                <!-- Date Card 4 -->
+                <button
+                    class="flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:ring-2 focus:ring-blue-600">
+                    <span class="text-sm font-semibold text-gray-800">Wed, Jan 6</span>
+                    <span class="text-xs text-gray-500">Form Rs 3000</span>
+                </button>
+                <!-- Date Card 5 -->
+                <button
+                    class="flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:ring-2 focus:ring-blue-600">
+                    <span class="text-sm font-semibold text-gray-800">Thurs, Jan 6</span>
+                    <span class="text-xs text-gray-500">Form Rs 3000</span>
+                </button>
+                <!-- Date Card 6 -->
+                <button
+                    class="flex flex-col items-center justify-center border px-4 py-2 rounded-md hover:bg-gray-200 focus:ring-2 focus:ring-blue-600">
+                    <span class="text-sm font-semibold text-gray-800">Thurs, Jan 6</span>
+                    <span class="text-xs text-gray-500">Form Rs 3000</span>
+                </button>
+            </div>
+            <!-- Navigation Steps -->
+            <div class="text-sm text-gray-500">
+                <span class="font-semibold text-black">Choose</span> > Fill Details > Done
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Section -->
+
+    <div class="flex flex-row ">
+        <div
+            class="grid-cols-4 ml-4 mb-4 w-full h-full md:mt-[220px] lg:mt-[230px] md:w-1/3 lg:w-[400px] shadow-md rounded-lg px-6 py-4">
+
+            <div class="flex items-center justify-between border-b pb-4 mb-4">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-gray-500 w-40 h-28 rounded-md text-center flex items-center justify-center">
+                        Map Here
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://img.icons8.com/ios-filled/50/map.png" alt="Routes" class="w-10 h-10" />
+                    <a href="#" class="text-blue-600 text-sm hover:underline">View in Map</a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Filters</h3>
+
+                <div class="mb-4">
+                    <h4 class="text-md font-semibold text-gray-800 mb-2">Driver</h4>
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-gray-700">With Driver</span>
+                        </label>
+                        <span class="text-gray-500 text-sm">from Rs 2000</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-gray-700">Without Driver</span>
+                        </label>
+                        <span class="text-gray-500 text-sm">from Rs 2000</span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h4 class="text-md font-semibold text-gray-800 mb-2">Vehicle Type</h4>
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-gray-700">SUV / Jeep</span>
+                        </label>
+                        <span class="text-gray-500 text-sm">from Rs 2000</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-gray-700">Car</span>
+                        </label>
+                        <span class="text-gray-500 text-sm">from Rs 1200</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-gray-700">Bus</span>
+                        </label>
+                        <span class="text-gray-500 text-sm">from Rs 30000</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-gray-700">Luxury Car</span>
+                        </label>
+                        <span class="text-gray-500 text-sm">from Rs 6000</span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h4 class="text-md font-semibold text-gray-800 mb-2">Features</h4>
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-gray-700">Offroad</span>
+                        </label>
+                        <span class="text-gray-500 text-sm">from Rs 2000</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-gray-700">Automatic Driving</span>
+                        </label>
+                        <span class="text-gray-500 text-sm">from Rs 2000</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-gray-700">Manual Driving</span>
+                        </label>
+                        <span class="text-gray-500 text-sm">from Rs 2000</span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h4 class="text-md font-semibold text-gray-800 mb-2">No of Pax</h4>
+                    <div class="relative">
+                        <input id="pax-range" type="range" min="0" max="24" step="1" value="8"
+                            class="w-full  bg-transparent" />
+                        <div class="flex justify-between text-sm text-gray-700 mt-2">
+                            <span>0</span>
+                            <span>8</span>
+                            <span>16</span>
+                            <span>24</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class=" w-full h-full bg-green-500">
+            Cards here
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="scripts/rentalScript.js"></script>
+</body>
+
+</html>
