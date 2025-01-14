@@ -47,7 +47,14 @@
 /* Hover effect for days */
 .flatpickr-day:hover {
     background: rgba(11, 60, 73, 0.2) !important;
-    /* Slightly lighter hover color */
     color: #0B3C49 !important;
 }
 
+
+.pagination-btn {
+    @apply border border-gray-300 text-gray-700 px-3 py-2 rounded-md hover:bg-gray-100 focus:outline-none;
+}
+
+.pagination-btn.active {
+    @apply border-blue-500 text-blue-600 bg-blue-100;
+}

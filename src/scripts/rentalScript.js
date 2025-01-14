@@ -24,3 +24,12 @@ function toggleInfo(id) {
         infoDiv.classList.add("hidden");
     }
 }
+
+
+function updateMainImage(thumbnail) {
+    // Get the src of the clicked thumbnail
+    const newImageSrc = thumbnail.src;
+
+    // Update the main image src
+    document.getElementById("main-image").src = newImageSrc;
+}
