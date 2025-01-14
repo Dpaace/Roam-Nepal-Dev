@@ -2,32 +2,95 @@
 console.log("External Script Connected!!!")
 
 
-// const tabs = document.querySelectorAll('#round-trip-tab, #one-way-tab, #hourly-tab, #airport-tab');
-// const formContainer = document.getElementById('form-container-round-trip');
-// const mapContainer = document.getElementById('map-container');
+// Initialize Flatpickr for Pick-Up Date/Time
+flatpickr("#pickup-date", {
+    enableTime: true,
+    noCalendar: false,
+    time_24hr: false,
+    dateFormat: "Y-m-d H:i K",
+    minuteIncrement: 30,
+    minDate: "today",
+    position: "auto center",
+});
 
-// tabs.forEach(tab => {
-//     tab.addEventListener('click', (event) => {
-//         // Update tab styles
-//         tabs.forEach(t => t.classList.remove('text-teal-600', 'font-semibold'));
-//         event.target.classList.add('text-teal-600', 'font-semibold');
+// Initialize Flatpickr for Drop-Off Date/Time
+flatpickr("#dropoff-date", {
+    enableTime: true,
+    noCalendar: false,
+    time_24hr: false,
+    dateFormat: "Y-m-d H:i K",
+    minuteIncrement: 30,
+    minDate: "today",
+    position: "auto center",
 
-//         // Change content based on tab
-//         if (event.target.id === 'round-trip-tab') {
-//             formContainer.innerHTML = '`<p class="text-center">Form for Round Trip goes here.</p>`';
-//             mapContainer.innerHTML = `<span class="text-gray-600">Map for Round Trip will be displayed here.</span>`;
-//         } else if (event.target.id === 'one-way-tab') {
-//             formContainer.innerHTML = `<p class="text-center">Form for One Way goes here.</p>`;
-//             mapContainer.innerHTML = `<span class="text-gray-600">Map for One Way will be displayed here.</span>`;
-//         } else if (event.target.id === 'hourly-tab') {
-//             formContainer.innerHTML = `<p class="text-center">Form for Hourly goes here.</p>`;
-//             mapContainer.innerHTML = `<span class="text-gray-600">Map for Hourly will be displayed here.</span>`;
-//         } else if (event.target.id === 'airport-tab') {
-//             formContainer.innerHTML = `<p class="text-center">Form for Airport Pick/Drop goes here.</p>`;
-//             mapContainer.innerHTML = `<span class="text-gray-600">Map for Airport Pick/Drop will be displayed here.</span>`;
-//         }
-//     });
+});
+
+// // Get the button and the container
+// const addStopButton = document.getElementById("add-stop-btn");
+// const stopContainer = document.getElementById("stop-container");
+
+// // Add click event listener to the button
+// addStopButton.addEventListener("click", () => {
+
+//     event.preventDefault();
+//     // Create a new input field
+//     const newInput = document.createElement("input");
+//     newInput.type = "text";
+//     newInput.placeholder = "Enter stop";
+//     newInput.className = "w-full border border-gray-300 rounded px-4 py-2 mt-2";
+
+//     // Append the new input field to the container
+//     stopContainer.appendChild(newInput);
 // });
+
+
+// Get the button and the container
+const addStopButton = document.getElementById("add-stop-btn");
+const stopContainer = document.getElementById("stop-container");
+
+// Set the maximum number of inputs allowed
+let maxInputs = 1;
+
+addStopButton.addEventListener("click", (event) => {
+    // Prevent default button behavior
+    event.preventDefault();
+
+    stopContainer.classList.remove('hidden')
+    // Check the current number of inputs in the container
+    const existingInputs = stopContainer.querySelectorAll("input").length;
+
+    // Add an input field only if the current number is less than the allowed maximum
+    if (existingInputs < maxInputs) {
+        const newInput = document.createElement("input");
+        newInput.type = "text";
+        newInput.placeholder = "Enter stop";
+        newInput.className = "w-full border border-black rounded px-4 py-2";
+
+        // Append the new input field to the container
+        stopContainer.appendChild(newInput);
+    }
+});
+
+
+
+
+// // Initialize Flatpickr for Pick-Up Date/Time
+// flatpickr("#pickup-date", {
+//     enableTime: true,
+//     dateFormat: "Y-m-d H:i", // Format for the date and time
+//     time_24hr: true,         // Use 24-hour format
+//     minDate: "today",        // Prevent selecting past dates
+// });
+
+// // Initialize Flatpickr for Drop-Off Date/Time
+// flatpickr("#dropoff-date", {
+//     enableTime: true,
+//     dateFormat: "Y-m-d H:i", // Format for the date and time
+//     time_24hr: true,
+//     minDate: "today",
+// });
+
+
 
 
 // Tab switching logic
@@ -42,8 +105,8 @@ const containers = {
 tabs.forEach(tab => {
     tab.addEventListener('click', (event) => {
         // Update tab styles
-        tabs.forEach(t => t.classList.remove('text-teal-600', 'font-semibold', 'border-b-4', 'border-blue-900'));
-        event.target.classList.add('text-teal-600', 'font-semibold', 'border-b-4', 'border-blue-900');
+        tabs.forEach(t => t.classList.remove('text-teal-600', 'font-semibold', 'border-b-4', 'border-[#03677E]'));
+        event.target.classList.add('text-teal-600', 'font-semibold', 'border-b-4', 'border-[#03677E]');
 
         // Show the corresponding container and hide others
         Object.keys(containers).forEach(key => {

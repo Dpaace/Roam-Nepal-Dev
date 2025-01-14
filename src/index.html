@@ -15,12 +15,18 @@
         href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
         rel="stylesheet">
 
+    <!-- Flatpickr CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
 
 </head>
 
 <body class="bg-white font-roboto">
     <!-- Navigation Bar -->
-    <nav class="bg-[#03677E] text-white fixed top-0 left-0 w-full z-50 shadow-lg ">
+    <nav class="bg-primary text-white fixed top-0 left-0 w-full z-50 shadow-lg ">
         <div class="mx-auto flex justify-between items-center py-4 px-16">
             <!-- Logo -->
             <div class="text-2xl font-bold">Roam Nepal</div>
@@ -28,20 +34,25 @@
             <div class="flex flex-col items-end">
                 <!-- Top Navigation Items -->
                 <div class="hidden md:flex items-center space-x-4 gap-4 text-sm">
-                    <span class="flex items-center space-x-1">
-                        <span class="text-sm">● NPR</span>
+                    <span class="flex  space-x-1">
+                        <img class="w-4 h-4" src="/src/images/svg/dot.svg" alt="dot">
+                        <span class="text-sm">NPR</span>
                     </span>
-                    <span class="flex items-center space-x-1">
-                        <span class="text-sm">📅 B.S</span>
+                    <span class="flex space-x-1">
+                        <img class="w-4 h-4" src="/src/images/svg/calendar_today.svg" alt="calendar">
+                        <span class="text-sm">B.S</span>
                     </span>
-                    <span class="flex items-center space-x-1">
-                        <span class="text-sm">🇺🇸 English</span>
+                    <span class="flex space-x-1">
+                        <img class="w-4 h-4" src="/src/images/svg/us.svg" alt="us">
+                        <span class="text-sm">English</span>
                     </span>
-                    <span class="flex items-center space-x-1">
-                        <span class="text-sm">❓ Help</span>
+                    <span class="flex space-x-1">
+                        <img class="w-4 h-4" src="/src/images/svg/help.svg" alt="bus">
+                        <span class="text-sm">Help</span>
                     </span>
-                    <button class="hover:text-teal-300 flex items-center space-x-1">
-                        <span>🎟️</span>
+                    <button class="hover:text-teal-300 flex  space-x-1 ">
+                        <!-- <span><img class="w-4 h-4" src="/src/images/svg/ticket.svg" alt="tickets"></span> -->
+                        <img class="w-4 h-4" src="/src/images/svg/ticket.svg" alt="tickets">
                         <span>Manage Tickets</span>
                     </button>
                     <div class="flex items-center space-x-1">
@@ -53,27 +64,27 @@
                 <!-- Bottom Navigation Items -->
                 <div class="hidden md:flex items-center space-x-6 text-xl mt-5">
                     <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
-                        <span>🚌</span>
+                        <span><img class="w-5 h-5" src="/src/images/svg/bus.svg" alt="bus"></span>
                         <span>Bus Ticket</span>
                     </a>
                     <a href="#" class="hover:text-teal-300 flex items-center space-x-1 cus-active">
-                        <span>🏍️</span>
+                        <span><img class="w-5 h-5" src="/src/images/svg/rental.svg" alt="rental"></span>
                         <span>Rental</span>
                     </a>
                     <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
-                        <span>🏨</span>
+                        <span><img class="w-5 h-5" src="/src/images/svg/hotels.svg" alt="hotels"></span>
                         <span>Hotels</span>
                     </a>
                     <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
-                        <span>🎯</span>
+                        <span><img class="w-5 h-5" src="/src/images/svg/activities.svg" alt="activities"></span>
                         <span>Activities</span>
                     </a>
                     <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
-                        <span>🎁</span>
+                        <span><img class="w-5 h-5" src="/src/images/svg/packages.svg" alt="packages"></span>
                         <span>Packages</span>
                     </a>
                     <a href="#" class="hover:text-teal-300 flex items-center space-x-1">
-                        <span>✈️</span>
+                        <span><img class="w-5 h-5" src="/src/images/svg/airport-plane.svg" alt="flights"></span>
                         <span>Flights</span>
                     </a>
 
@@ -92,34 +103,36 @@
     <!-- Content Section with Background Image -->
     <div class="relative flex items-center bg-white bg-cover bg-center h-lvh"
         style="background-image: url('/src/images/home1.jpg'); ">
-        <div class="bg-red-500">
-            <h1 class="absolute top-[250px] left-20 text-white text-3xl">Affordable and Reiable Vehicle Rentals</h1>
-            <div class="absolute top-[300px] left-20 z-40 bg-red-500">
+        <div class="">
+            <h1 class="absolute top-[250px] left-20 text-white text-4xl">Affordable and Reliable Vehicle Rentals</h1>
+            <div class="absolute top-[300px] left-20 z-40">
                 <div class="bg-white flex">
                     <button id="round-trip-tab"
-                        class="py-2 px-4 text-left hover:bg-gray-100 text-teal-600 font-semibold border-b-4 border-blue-900">
+                        class="py-2 px-5 text-left hover:bg-gray-100 text-txtprimary font-semibold border-b-4 border-[#03677E]">
                         Round Trip
                     </button>
-                    <button id="one-way-tab" class="py-2 px-4 text-left hover:bg-gray-100 text-gray-600">
+                    <button id="one-way-tab" class="py-2 px-5 text-left hover:bg-gray-100 text-txtprimary">
                         One Way
                     </button>
-                    <button id="hourly-tab" class="py-2 px-4 text-left hover:bg-gray-100 text-gray-600">
+                    <button id="hourly-tab" class="py-2 px-5 text-left hover:bg-gray-100 text-txtprimary">
                         Hourly
                     </button>
-                    <button id="airport-tab" class="py-2 px-4 text-left hover:bg-gray-100 text-gray-600">
+                    <button id="airport-tab" class="py-2 px-5 text-left hover:bg-gray-100 text-txtprimary">
                         Airport Pick/Drop
                     </button>
                 </div>
             </div>
             <div class="w-4/5 absolute top-[341px] left-20 right-4 flex bg-white rounded-lg shadow-lg overflow-hidden">
                 <div id="form-container-round-trip" class="w-1/2 p-6">
-                    <form class="space-y-4">
-                        <div class="grid grid-cols-12 gap-4 items-center">
+                    <form class="space-y-4 ">
+                        <!-- <div class="w-full grid grid-cols-12 gap-2 items-center bg-red-500"> -->
+                        <div class="w-full flex  items-center ">
                             <!-- Pick-Up Field -->
-                            <div class="col-span-4 relative">
-                                <div class="relative">
+                            <!-- <div class="col-span-4 w-full "> -->
+                            <div class="w-[35%] ">
+                                <div class="relative rounded border border-black p-0">
                                     <!-- Input Field -->
-                                    <div class="flex items-center border rounded px-4 py-2">
+                                    <div class="flex items-center border rounded px-2 py-2">
 
                                         <svg class="w-5 h-5 text-black mr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
                                             y="0px" width="100" height="100" viewBox="0 0 50 50">
@@ -133,37 +146,34 @@
 
                                     <!-- Dropdown -->
                                     <ul id="pickup-options"
-                                        class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
+                                        class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50 rounded border border-black p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('pickup', 'Current Location')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/marker--v1.png"
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/current_location.svg"
                                                     alt="marker--v1" />
                                                 Current Location
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('pickup', 'Pin in Map')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/fluency/48/map-pin.png"
-                                                    alt="map-pin" />
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('pickup', 'TIA Airport')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/airport.png"
-                                                    alt="airport" />
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
 
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onclick="selectOption('pickup', 'Thamel')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5"
-                                                    src="https://img.icons8.com/color/48/map-marker--v2.png"
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/location.svg"
                                                     alt="map-marker--v2" />
                                                 Thamel
                                             </span>
@@ -173,18 +183,20 @@
                             </div>
 
                             <!-- Switch Button -->
-                            <div class="col-span-2 flex justify-center">
+                            <!-- <div class="col-span-2 flex justify-center"> -->
+                            <div class="w-[10%] flex justify-center ">
                                 <button
-                                    class="bg-teal-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                    class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center">
                                     ⇄
                                 </button>
                             </div>
 
                             <!-- Drop-Off Field -->
-                            <div class="col-span-4 relative">
+                            <!-- <div class="col-span-4 relative"> -->
+                            <div class="w-[35%] relative rounded border border-black p-0">
                                 <div class="relative">
                                     <!-- Input Field -->
-                                    <div class="flex items-center border rounded px-4 py-2">
+                                    <div class="flex items-center border rounded px-2 py-2">
                                         <svg class="w-5 h-5 text-black mr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
                                             y="0px" width="100" height="100" viewBox="0 0 50 50">
                                             <path
@@ -198,36 +210,34 @@
 
                                     <!-- Dropdown -->
                                     <ul id="dropoff-options"
-                                        class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
+                                        class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50 rounded border border-black p-0">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('dropoff', 'Current Location')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/marker--v1.png"
+                                            onclick="selectOption('pickup', 'Current Location')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/current_location.svg"
                                                     alt="marker--v1" />
                                                 Current Location
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('dropoff', 'Pin in Map')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/fluency/48/map-pin.png"
-                                                    alt="map-pin" />
+                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('dropoff', 'TIA Airport')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/airport.png"
-                                                    alt="airport" />
+                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
+
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('dropoff', 'Thamel')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5"
-                                                    src="https://img.icons8.com/color/48/map-marker--v2.png"
+                                            onclick="selectOption('pickup', 'Thamel')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/location.svg"
                                                     alt="map-marker--v2" />
                                                 Thamel
                                             </span>
@@ -237,37 +247,39 @@
                             </div>
 
                             <!-- Add Stop Button -->
-                            <div class="col-span-2 border p-0">
-                                <button class="w-full text-teal-600 hover:text-teal-800 gap-0 p-0">
+                            <!-- <div class="col-span-2 border p-0"> -->
+                            <div class="w-[20%] ml-1 rounded border border-black p-0">
+                                <button id="add-stop-btn" class="w-full h-full text-txtprimary gap-0 p-0">
                                     <p class="text-sm">+ <br>Add Stop</p>
                                 </button>
                             </div>
                         </div>
+                        <div id="stop-container" class="grid grid-cols-1 gap-4 hidden">
 
-                        <div class="grid grid-cols-1 gap-4">
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-4 ">
                             <div class="relative">
-                                <label for="pickup-date" class="block text-sm font-medium">Pick-Up Date / Time</label>
-                                <input type="datetime-local" id="pickup-date"
-                                    class="w-full border rounded px-4 py-2 cursor-pointer"
-                                    placeholder="Pick-Up Date / Time"
-                                    onclick="document.getElementById('pickup-date').showPicker()">
-
+                                <div class="flex items-center border border-black rounded px-4 py-2">
+                                    <img class="w-5 h-5 mr-2" src="/src/images/svg/date-pick.svg" alt="pickupdate" />
+                                    <input type="text" id="pickup-date"
+                                        class="w-full bg-transparent outline-none cursor-pointer"
+                                        placeholder="Pick-Up Date / Time" />
+                                </div>
                             </div>
                             <div class="relative">
-                                <label for="dropoff-date" class="block text-sm font-medium">Drop-Off Date / Time</label>
-                                <input type="datetime-local" id="dropoff-date"
-                                    class="w-full border rounded px-4 py-2 cursor-pointer"
-                                    placeholder="Drop-Off Date / Time"
-                                    onclick="document.getElementById('dropoff-date').showPicker()">
-
+                                <div class="flex items-center border border-black rounded px-4 py-2">
+                                    <img class="w-5 h-5 mr-2" src="/src/images/svg/date-pick.svg" alt="pickupdate" />
+                                    <input type="text" id="dropoff-date"
+                                        class="w-full bg-transparent outline-none cursor-pointer"
+                                        placeholder="Drop-Off Date / Time" />
+                                </div>
                             </div>
                         </div>
 
                         <div class="relative">
-                            <div class="flex items-center border rounded px-4 py-2">
-                                <img class="w-5 h-5 mr-2"
-                                    src="https://img.icons8.com/ios-filled/50/people-in-car-side-view.png"
-                                    alt="people-in-car-side-view" />
+                            <div class="flex items-center  px-4 py-2 border border-black rounded">
+                                <img class="w-5 h-5 mr-2" src="/src/images/svg/vehicle.svg" alt="vehicle" />
                                 <select id="vehicle-type" class="w-full bg-transparent outline-none">
                                     <option value="">Vehicle Type</option>
                                     <option value="sedan">Sedan</option>
@@ -279,21 +291,20 @@
 
 
                         <div class="relative">
-                            <div class="flex items-center border rounded px-4 py-2">
-                                <img class="w-5 h-5 mr-2" src="https://img.icons8.com/forma-regular-filled/24/user.png"
-                                    alt="user" />
-                                <input type="number" id="pax" class="w-full bg-transparent outline-none"
+                            <div class="flex items-center border border-black rounded px-4 py-2">
+                                <img class="w-5 h-5 mr-2" src="/src/images/svg/person.svg" alt="passengers" />
+                                <input type="number" min="0" id="pax" class="w-full bg-transparent outline-none"
                                     placeholder="Enter number of passengers">
                             </div>
                         </div>
 
 
                         <div class="flex items-center">
-                            <input type="checkbox" id="include-driver" class="mr-2">
+                            <input type="checkbox" id="include-driver" class="mr-2 accent-[#0B3C49] ">
                             <label for="include-driver" class="text-sm">Include a driver</label>
                         </div>
 
-                        <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded hover:bg-teal-700">
+                        <button type="submit" class="w-full bg-[#0B3C49] text-white py-2 rounded hover:bg-[#0a1e24]">
                             Search Vehicles
                         </button>
                     </form>
@@ -306,7 +317,7 @@
                     <form class="space-y-4">
                         <div class="grid grid-cols-12 gap-4 items-center">
                             <!-- Pick-Up Field -->
-                            <div class="col-span-4 relative">
+                            <div class="col-span-4 relative rounded border border-black p-0">
                                 <div class="relative">
                                     <div class="flex items-center border rounded px-4 py-2">
                                         <svg class="w-5 h-5 text-black mr-2" xmlns="http://www.w3.org/2000/svg" x="0px"
@@ -322,35 +333,33 @@
                                     <!-- Dropdown -->
                                     <ul id="oneway-pickup-options"
                                         class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
-                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('oneway-pickup', 'Current Location')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/marker--v1.png"
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer "
+                                            onclick="selectOption('pickup', 'Current Location')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/current_location.svg"
                                                     alt="marker--v1" />
                                                 Current Location
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('oneway-pickup', 'Pin in Map')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/fluency/48/map-pin.png"
-                                                    alt="map-pin" />
+                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('oneway-pickup', 'TIA Airport')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/airport.png"
-                                                    alt="airport" />
+                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
+
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('oneway-pickup', 'Thamel')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5"
-                                                    src="https://img.icons8.com/color/48/map-marker--v2.png"
+                                            onclick="selectOption('pickup', 'Thamel')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/location.svg"
                                                     alt="map-marker--v2" />
                                                 Thamel
                                             </span>
@@ -383,34 +392,32 @@
                                     <ul id="oneway-dropoff-options"
                                         class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('oneway-dropoff', 'Current Location')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/marker--v1.png"
+                                            onclick="selectOption('pickup', 'Current Location')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/current_location.svg"
                                                     alt="marker--v1" />
                                                 Current Location
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('oneway-dropoff', 'Pin in Map')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/fluency/48/map-pin.png"
-                                                    alt="map-pin" />
+                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('oneway-dropoff', 'TIA Airport')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/airport.png"
-                                                    alt="airport" />
+                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
+
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('oneway-dropoff', 'Thamel')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5"
-                                                    src="https://img.icons8.com/color/48/map-marker--v2.png"
+                                            onclick="selectOption('pickup', 'Thamel')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/location.svg"
                                                     alt="map-marker--v2" />
                                                 Thamel
                                             </span>
@@ -480,34 +487,32 @@
                                     <ul id="hourly-pickup-options"
                                         class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('hourly-pickup', 'Current Location')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/marker--v1.png"
+                                            onclick="selectOption('pickup', 'Current Location')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/current_location.svg"
                                                     alt="marker--v1" />
                                                 Current Location
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('hourly-pickup', 'Pin in Map')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/fluency/48/map-pin.png"
-                                                    alt="map-pin" />
+                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('hourly-pickup', 'TIA Airport')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/airport.png"
-                                                    alt="airport" />
+                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
+
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('hourly-pickup', 'Thamel')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5"
-                                                    src="https://img.icons8.com/color/48/map-marker--v2.png"
+                                            onclick="selectOption('pickup', 'Thamel')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/location.svg"
                                                     alt="map-marker--v2" />
                                                 Thamel
                                             </span>
@@ -540,34 +545,32 @@
                                     <ul id="hourly-dropoff-options"
                                         class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('hourly-dropoff', 'Current Location')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/marker--v1.png"
+                                            onclick="selectOption('pickup', 'Current Location')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/current_location.svg"
                                                     alt="marker--v1" />
                                                 Current Location
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('hourly-dropoff', 'Pin in Map')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/fluency/48/map-pin.png"
-                                                    alt="map-pin" />
+                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('hourly-dropoff', 'TIA Airport')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/airport.png"
-                                                    alt="airport" />
+                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
+
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('hourly-dropoff', 'Thamel')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5"
-                                                    src="https://img.icons8.com/color/48/map-marker--v2.png"
+                                            onclick="selectOption('pickup', 'Thamel')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/location.svg"
                                                     alt="map-marker--v2" />
                                                 Thamel
                                             </span>
@@ -667,34 +670,32 @@
                                     <ul id="airport-pickup-options"
                                         class="absolute top-full left-0 w-[250px] border rounded bg-white shadow-lg mt-2 hidden z-50">
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('airport-pickup', 'Current Location')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/marker--v1.png"
+                                            onclick="selectOption('pickup', 'Current Location')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/current_location.svg"
                                                     alt="marker--v1" />
                                                 Current Location
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('airport-pickup', 'Pin in Map')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/fluency/48/map-pin.png"
-                                                    alt="map-pin" />
+                                            onclick="selectOption('pickup', 'Pin in Map')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/Map Pin.svg" alt="map-pin" />
                                                 Pin in Map
                                             </span>
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('airport-pickup', 'TIA Airport')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5" src="https://img.icons8.com/ios/50/airport.png"
-                                                    alt="airport" />
+                                            onclick="selectOption('pickup', 'TIA Airport')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/airport.svg" alt="airport" />
                                                 TIA Airport
                                             </span>
+
                                         </li>
                                         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                                            onclick="selectOption('airport-pickup', 'Thamel')">
-                                            <span class="flex items-center">
-                                                <img class="w-5 h-5"
-                                                    src="https://img.icons8.com/color/48/map-marker--v2.png"
+                                            onclick="selectOption('pickup', 'Thamel')">
+                                            <span class="flex items-center gap-2">
+                                                <img class="w-5 h-5" src="/src/images/svg/location.svg"
                                                     alt="map-marker--v2" />
                                                 Thamel
                                             </span>
@@ -745,7 +746,15 @@
 
 
                 <div id="map-container" class="w-1/2 bg-gray-200 flex items-center justify-center">
-                    <span class="text-gray-600">Map will be displayed here</span>
+                    <!-- <span class="text-gray-600">Map will be displayed here</span> -->
+                    <div class="relative text-right w-full h-full">
+                        <div class="overflow-hidden !bg-none h-full w-full">
+                            <iframe class="h-full" width="100%" frameborder="0" scrolling="no" marginheight="0"
+                                marginwidth="0"
+                                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Kathmandu&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1076,10 +1085,9 @@
 
             <!-- Phone Images -->
             <div class="flex justify-center gap-10 relative">
-                    <img src="images/android.png" alt="Phone 1" class="h-64 md:h-72 lg:h-52 shadow-lg rounded-lg" />
-                    <img src="images/iphone.png" alt="Phone 2"
-                        class="h-64 md:h-72 lg:h-52 shadow-lg rounded-lg" />
-                    <img src="images/qrcode.png" alt="QR Code" class="absolute top-0 bottom-10 left-[450px] w-32 h-32" />
+                <img src="images/android.png" alt="Phone 1" class="h-64 md:h-72 lg:h-52 shadow-lg rounded-lg" />
+                <img src="images/iphone.png" alt="Phone 2" class="h-64 md:h-72 lg:h-52 shadow-lg rounded-lg" />
+                <img src="images/qrcode.png" alt="QR Code" class="absolute top-0 bottom-10 left-[450px] w-32 h-32" />
             </div>
 
             <!-- <div class="relative">
@@ -1206,6 +1214,7 @@
     </footer>
 
     <script type="text/javascript" src="scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 
 </html>

@@ -8,6 +8,7 @@
     @apply border-b-4 rounded-none relative;
 } */
 
+
 .cus-active {
     position: relative;
 }
@@ -35,5 +36,18 @@
     /* Chrome, Safari, and Opera */
 }
 
+/* Selected date and time background */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    background: #0B3C49 !important;
+    color: white !important;
+}
 
-/* Style the track */
+/* Hover effect for days */
+.flatpickr-day:hover {
+    background: rgba(11, 60, 73, 0.2) !important;
+    /* Slightly lighter hover color */
+    color: #0B3C49 !important;
+}
+
